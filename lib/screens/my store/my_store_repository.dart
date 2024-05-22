@@ -5,8 +5,11 @@ import 'package:thunderapp/shared/constants/app_text_constants.dart';
 import 'package:thunderapp/shared/core/models/banca_model.dart';
 import 'package:thunderapp/shared/core/user_storage.dart';
 
+<<<<<<< HEAD
 import '../../shared/core/models/feira_model.dart';
 
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
 class MyStoreRepository {
   List<String> checkItems = [];
   bool? entrega;
@@ -14,6 +17,7 @@ class MyStoreRepository {
   String formasPagamento = '';
   UserStorage userStorage = UserStorage();
   final Dio _dio = Dio();
+<<<<<<< HEAD
   List<FeiraModel> feiras = [];
   FeiraModel feira = FeiraModel();
 
@@ -54,6 +58,8 @@ class MyStoreRepository {
     return [];
   }
 
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
 
   //Função para editar a banca
   Future<bool> editarBanca(
@@ -61,7 +67,10 @@ class MyStoreRepository {
       String horarioAbertura,
       String horarioFechamento,
       String precoMin,
+<<<<<<< HEAD
       String feiraId,
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
       String? imgPath,
       List<bool> isSelected,
       String pix,
@@ -110,9 +119,12 @@ class MyStoreRepository {
           "preco_minimo": precoMin.isEmpty
               ? banca.getPrecoMin.toString()
               : preMinimo.toString(),
+<<<<<<< HEAD
           "feira_id": feiraId.isEmpty
               ? banca.feiraId.toString()
               : feiraId.toString(),
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
           "formas_pagamento": formasPagamento.toString(),
           "entrega": entrega.toString(),
           "pix": pix.isEmpty ? banca.getPix.toString() : pix.toString(),
@@ -131,9 +143,12 @@ class MyStoreRepository {
               : horarioFechamento.toString(),
           "preco_minimo":
               precoMin.isEmpty ? banca.getPrecoMin : preMinimo.toString(),
+<<<<<<< HEAD
           "feira_id": feiraId.isEmpty
               ? banca.feiraId.toString()
               : feiraId.toString(),
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
           "imagem": await MultipartFile.fromFile(
             imgPath.toString(),
             filename: imgPath?.split("\\").last,
@@ -154,9 +169,12 @@ class MyStoreRepository {
           "horario_fechamento": horarioFechamento.isEmpty
               ? banca.getHorarioFechamento.toString()
               : horarioFechamento.toString(),
+<<<<<<< HEAD
           "feira_id": feiraId.isEmpty
               ? banca.feiraId.toString()
               : feiraId.toString(),
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
           "formas_pagamento": formasPagamento.toString(),
           "entrega": entrega.toString(),
           "pix": pix.toString(),
@@ -177,9 +195,12 @@ class MyStoreRepository {
             imgPath.toString(),
             filename: imgPath?.split("\\").last,
           ),
+<<<<<<< HEAD
           "feira_id": feiraId.isEmpty
               ? banca.feiraId.toString()
               : feiraId.toString(),
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
           "formas pagamento": formasPagamento.toString(),
           "entrega": entrega.toString(),
           "pix": pix.toString(),
@@ -228,7 +249,10 @@ class MyStoreRepository {
       String horarioAbertura,
       String horarioFechamento,
       String precoMin,
+<<<<<<< HEAD
       String feiraId,
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
       String? imgPath,
       List<bool> isSelected,
       bool? entrega,
@@ -269,7 +293,11 @@ class MyStoreRepository {
           "entrega": entrega.toString(),
           "pix": pix.toString(),
           "agricultor_id": userId.toString(),
+<<<<<<< HEAD
           "feira_id": feiraId.toString(),
+=======
+          "feira_id": '1',
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
           "bairro entrega": '1=>3.50'
         });
         print(body.fields);
@@ -287,7 +315,11 @@ class MyStoreRepository {
           "entrega": entrega.toString(),
           "pix": pix.toString(),
           "agricultor_id": userId.toString(),
+<<<<<<< HEAD
           "feira_id": feiraId.toString(),
+=======
+          "feira_id": '1',
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
           "bairro entrega": '1=>3.50'
         });
         print(body.fields);
@@ -347,7 +379,10 @@ class MyStoreRepository {
         },
       );
     }*/
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
 }

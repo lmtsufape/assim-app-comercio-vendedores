@@ -14,7 +14,10 @@ import 'package:thunderapp/shared/core/models/banca_model.dart';
 import '../../components/forms/custom_text_form_field.dart';
 import '../../shared/components/dialogs/default_alert_dialog.dart';
 import 'components/circle_image_profile.dart';
+<<<<<<< HEAD
 import 'components/dropdown_feira.dart';
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
 
 // ignore: must_be_immutable
 class EditStoreScreen extends StatefulWidget {
@@ -106,6 +109,7 @@ class _EditStoreScreenState extends State<EditStoreScreen> {
                                   )
                                 ],
                               ),
+<<<<<<< HEAD
                               Divider(
                                 height: size.height * 0.018,
                                 color: Colors.transparent,
@@ -125,6 +129,16 @@ class _EditStoreScreenState extends State<EditStoreScreen> {
                               ),
                               Divider(
                                 height: size.height * 0.018,
+=======
+                              const VerticalSpacerBox(size: SpacerSize.small),
+                              /*Text('Horário de Funcionamento',
+                              style: kTitle1.copyWith(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: size.height * 0.014,
+                                  color: kTextButtonColor)),*/
+                              Divider(
+                                height: size.height * 0.01,
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
                                 color: Colors.transparent,
                               ),
                               SizedBox(
@@ -363,10 +377,14 @@ class _EditStoreScreenState extends State<EditStoreScreen> {
                                   ],
                                 ),
                               ),
+<<<<<<< HEAD
                               Divider(
                                 height: size.height * 0.018,
                                 color: Colors.transparent,
                               ),
+=======
+                              const VerticalSpacerBox(size: SpacerSize.small),
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -407,10 +425,14 @@ class _EditStoreScreenState extends State<EditStoreScreen> {
                                   )
                                 ],
                               ),
+<<<<<<< HEAD
                               Divider(
                                 height: size.height * 0.018,
                                 color: Colors.transparent,
                               ),
+=======
+                              const VerticalSpacerBox(size: SpacerSize.small),
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
                               Text(
                                 'Realizará entregas?',
                                 style: TextStyle(
@@ -572,7 +594,11 @@ class _EditStoreScreenState extends State<EditStoreScreen> {
                                   style: OutlinedButton.styleFrom(
                                     backgroundColor: Colors.white,
                                     side: const BorderSide(
+<<<<<<< HEAD
                                         color: kDetailColor, width: 1.5),
+=======
+                                        color: Colors.orange, width: 1.5),
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(5),
                                     ),
@@ -580,7 +606,11 @@ class _EditStoreScreenState extends State<EditStoreScreen> {
                                   child: Text(
                                     'Voltar',
                                     style: TextStyle(
+<<<<<<< HEAD
                                         color: kDetailColor,
+=======
+                                        color: Colors.orange,
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
                                         fontSize: size.height * 0.024,
                                         fontWeight: FontWeight.w500),
                                   ),

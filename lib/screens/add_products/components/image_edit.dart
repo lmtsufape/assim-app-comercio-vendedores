@@ -2,7 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:thunderapp/screens/add_products/add_products_controller.dart';
+<<<<<<< HEAD
 import 'package:thunderapp/shared/constants/style_constants.dart';
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
 import '../../../shared/core/models/table_products_model.dart';
 
 class ImageEdit extends StatefulWidget {
@@ -49,7 +52,11 @@ class _ImageEditState extends State<ImageEdit> {
             child: Icon(
               Icons.shopping_bag,
               size: size.height * 0.1,
+<<<<<<< HEAD
               color: kDetailColor,
+=======
+              color: Colors.orange,
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
             ),
           ),
         ),

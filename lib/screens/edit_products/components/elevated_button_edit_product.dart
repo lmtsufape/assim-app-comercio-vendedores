@@ -21,7 +21,11 @@ class ElevatedButtonEditProduct extends StatefulWidget {
 
   static ButtonStyle styleEditProduct =
       ElevatedButton.styleFrom(
+<<<<<<< HEAD
     backgroundColor: kDetailColor,
+=======
+    backgroundColor: Colors.orange,
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5)),
   );

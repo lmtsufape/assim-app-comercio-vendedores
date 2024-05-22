@@ -6,7 +6,10 @@ import 'package:get/get.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:thunderapp/screens/my%20store/my_store_repository.dart';
 import 'package:thunderapp/shared/core/models/banca_model.dart';
+<<<<<<< HEAD
 import 'package:thunderapp/shared/core/models/feira_model.dart';
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
 import 'package:thunderapp/shared/core/user_storage.dart';
 import '../../shared/components/dialogs/default_alert_dialog.dart';
 import '../../shared/constants/style_constants.dart';
@@ -18,22 +21,31 @@ class MyStoreController extends GetxController {
   UserStorage userStorage = UserStorage();
   MyStoreRepository myStoreRepository = MyStoreRepository();
   File? _selectedImage;
+<<<<<<< HEAD
   String feira = 'Feira';
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
   final _imagePickerController = ImagePickerController();
   String? _imagePath;
   bool hasImg = false;
   bool editSucess = false;
   bool adcSucess = false;
+<<<<<<< HEAD
   List<FeiraModel> feiras = [];
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
   var textoErro = "Verifique os campos";
   String userToken = '';
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+<<<<<<< HEAD
   void loadFeiras() async {
     feiras = await myStoreRepository.getFeiras();
     update();
   }
 
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
   final List<bool> isSelected = [false, false, false];
   final List<String> checkItems = ['Dinheiro', 'PIX', 'Cartão'];
 
@@ -64,7 +76,10 @@ class MyStoreController extends GetxController {
       type: MaskAutoCompletionType.lazy);
 
   final TextEditingController _nomeBancaController = TextEditingController();
+<<<<<<< HEAD
   final TextEditingController _feiraIdController = TextEditingController();
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
   final TextEditingController _pixController = TextEditingController();
   final TextEditingController _quantiaMinController = TextEditingController();
   final TextEditingController _horarioAberturaController =
@@ -73,7 +88,10 @@ class MyStoreController extends GetxController {
       TextEditingController();
 
   TextEditingController get nomeBancaController => _nomeBancaController;
+<<<<<<< HEAD
   TextEditingController get feiraIdController => _feiraIdController;
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
 
   TextEditingController get quantiaMinController => _quantiaMinController;
 
@@ -111,12 +129,15 @@ class MyStoreController extends GetxController {
     update();
   }
 
+<<<<<<< HEAD
   void setFeira(String value) {
     feira = value;
     update();
   }
 
 
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
   bool checkImg() {
     if (_selectedImage == null) {
       return false;
@@ -202,7 +223,10 @@ class MyStoreController extends GetxController {
         _horarioAberturaController.text,
         _horarioFechamentoController.text,
         _quantiaMinController.text,
+<<<<<<< HEAD
         feira,
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
         _imagePath,
         isSelected,
         _pixController.text,
@@ -221,7 +245,10 @@ class MyStoreController extends GetxController {
           _horarioAberturaController.text,
           _horarioFechamentoController.text,
           _quantiaMinController.text,
+<<<<<<< HEAD
           feira,
+=======
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
           _imagePath,
           isSelected,
           deliver,
@@ -298,6 +325,7 @@ class MyStoreController extends GetxController {
     }
     return false;
   }
+<<<<<<< HEAD
 
   @override
   Future<void> onInit() async {
@@ -308,3 +336,6 @@ class MyStoreController extends GetxController {
 }
 
 
+=======
+}
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943

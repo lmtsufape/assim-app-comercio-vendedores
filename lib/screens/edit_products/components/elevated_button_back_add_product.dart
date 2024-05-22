@@ -75,7 +75,11 @@ class _ElevatedButtonBackAddProductState
         style: OutlinedButton.styleFrom(
           backgroundColor: Colors.white,
           side: const BorderSide(
+<<<<<<< HEAD
               color: kDetailColor, width: 1.5),
+=======
+              color: Colors.orange, width: 1.5),
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
           ),
@@ -83,7 +87,11 @@ class _ElevatedButtonBackAddProductState
         child: Text(
           'Voltar',
           style: TextStyle(
+<<<<<<< HEAD
               color: kDetailColor,
+=======
+              color: Colors.orange,
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
               fontSize: size.height * 0.024,
               fontWeight: FontWeight.bold),
         ),

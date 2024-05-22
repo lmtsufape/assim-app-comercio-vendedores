@@ -59,7 +59,11 @@ class _DropDownQtdAddProductState extends State<DropDownQtdAddProduct> {
                       isExpanded: true,
                       icon: Icon(
                         Icons.keyboard_arrow_down,
+<<<<<<< HEAD
                         color: kDetailColor,
+=======
+                        color: Colors.orange,
+>>>>>>> c6bc0a92f57c8c4bb087bc3a8f817ab23dc36943
                         size: size.width * 0.05,
                       ),
                       hint: Text(
