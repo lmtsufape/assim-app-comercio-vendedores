@@ -14,6 +14,7 @@ import 'package:thunderapp/shared/core/models/banca_model.dart';
 import '../../components/forms/custom_text_form_field.dart';
 import '../../shared/components/dialogs/default_alert_dialog.dart';
 import 'components/circle_image_profile.dart';
+import 'components/dropdown_feira.dart';
 
 // ignore: must_be_immutable
 class EditStoreScreen extends StatefulWidget {
@@ -105,14 +106,25 @@ class _EditStoreScreenState extends State<EditStoreScreen> {
                                   )
                                 ],
                               ),
-                              const VerticalSpacerBox(size: SpacerSize.small),
-                              /*Text('Horário de Funcionamento',
-                              style: kTitle1.copyWith(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: size.height * 0.014,
-                                  color: kTextButtonColor)),*/
                               Divider(
-                                height: size.height * 0.01,
+                                height: size.height * 0.018,
+                                color: Colors.transparent,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Feira',
+                                    style: TextStyle(
+                                        fontSize: size.height * 0.018,
+                                        color: kSecondaryColor,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                  DropDownFeira(controller),
+                                ],
+                              ),
+                              Divider(
+                                height: size.height * 0.018,
                                 color: Colors.transparent,
                               ),
                               SizedBox(
@@ -351,7 +363,10 @@ class _EditStoreScreenState extends State<EditStoreScreen> {
                                   ],
                                 ),
                               ),
-                              const VerticalSpacerBox(size: SpacerSize.small),
+                              Divider(
+                                height: size.height * 0.018,
+                                color: Colors.transparent,
+                              ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -392,7 +407,10 @@ class _EditStoreScreenState extends State<EditStoreScreen> {
                                   )
                                 ],
                               ),
-                              const VerticalSpacerBox(size: SpacerSize.small),
+                              Divider(
+                                height: size.height * 0.018,
+                                color: Colors.transparent,
+                              ),
                               Text(
                                 'Realizará entregas?',
                                 style: TextStyle(
@@ -554,7 +572,7 @@ class _EditStoreScreenState extends State<EditStoreScreen> {
                                   style: OutlinedButton.styleFrom(
                                     backgroundColor: Colors.white,
                                     side: const BorderSide(
-                                        color: Colors.orange, width: 1.5),
+                                        color: kDetailColor, width: 1.5),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(5),
                                     ),
@@ -562,7 +580,7 @@ class _EditStoreScreenState extends State<EditStoreScreen> {
                                   child: Text(
                                     'Voltar',
                                     style: TextStyle(
-                                        color: Colors.orange,
+                                        color: kDetailColor,
                                         fontSize: size.height * 0.024,
                                         fontWeight: FontWeight.w500),
                                   ),

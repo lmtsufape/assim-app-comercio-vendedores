@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:thunderapp/screens/my%20store/my_store_repository.dart';
 import 'package:thunderapp/shared/core/models/banca_model.dart';
+import 'package:thunderapp/shared/core/models/feira_model.dart';
 import 'package:thunderapp/shared/core/user_storage.dart';
 import '../../shared/components/dialogs/default_alert_dialog.dart';
 import '../../shared/constants/style_constants.dart';
@@ -17,14 +18,21 @@ class MyStoreController extends GetxController {
   UserStorage userStorage = UserStorage();
   MyStoreRepository myStoreRepository = MyStoreRepository();
   File? _selectedImage;
+  String feira = 'Feira';
   final _imagePickerController = ImagePickerController();
   String? _imagePath;
   bool hasImg = false;
   bool editSucess = false;
   bool adcSucess = false;
+  List<FeiraModel> feiras = [];
   var textoErro = "Verifique os campos";
   String userToken = '';
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  void loadFeiras() async {
+    feiras = await myStoreRepository.getFeiras();
+    update();
+  }
 
   final List<bool> isSelected = [false, false, false];
   final List<String> checkItems = ['Dinheiro', 'PIX', 'Cartão'];
@@ -56,6 +64,7 @@ class MyStoreController extends GetxController {
       type: MaskAutoCompletionType.lazy);
 
   final TextEditingController _nomeBancaController = TextEditingController();
+  final TextEditingController _feiraIdController = TextEditingController();
   final TextEditingController _pixController = TextEditingController();
   final TextEditingController _quantiaMinController = TextEditingController();
   final TextEditingController _horarioAberturaController =
@@ -64,6 +73,7 @@ class MyStoreController extends GetxController {
       TextEditingController();
 
   TextEditingController get nomeBancaController => _nomeBancaController;
+  TextEditingController get feiraIdController => _feiraIdController;
 
   TextEditingController get quantiaMinController => _quantiaMinController;
 
@@ -100,6 +110,12 @@ class MyStoreController extends GetxController {
     pixBool = value;
     update();
   }
+
+  void setFeira(String value) {
+    feira = value;
+    update();
+  }
+
 
   bool checkImg() {
     if (_selectedImage == null) {
@@ -186,6 +202,7 @@ class MyStoreController extends GetxController {
         _horarioAberturaController.text,
         _horarioFechamentoController.text,
         _quantiaMinController.text,
+        feira,
         _imagePath,
         isSelected,
         _pixController.text,
@@ -204,6 +221,7 @@ class MyStoreController extends GetxController {
           _horarioAberturaController.text,
           _horarioFechamentoController.text,
           _quantiaMinController.text,
+          feira,
           _imagePath,
           isSelected,
           deliver,
@@ -280,4 +298,13 @@ class MyStoreController extends GetxController {
     }
     return false;
   }
+
+  @override
+  Future<void> onInit() async {
+    super.onInit();
+    loadFeiras();
+    update();
+  }
 }
+
+

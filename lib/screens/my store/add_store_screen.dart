@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:thunderapp/components/buttons/primary_button.dart';
 import 'package:thunderapp/components/utils/vertical_spacer_box.dart';
+import 'package:thunderapp/screens/my%20store/components/dropdown_feira.dart';
 import 'package:thunderapp/screens/my%20store/my_store_controller.dart';
 import 'package:thunderapp/shared/constants/app_enums.dart';
 import 'package:thunderapp/shared/constants/app_number_constants.dart';
@@ -97,7 +98,27 @@ class _AddStoreScreenState extends State<AddStoreScreen> {
                                   )
                                 ],
                               ),
-                              const VerticalSpacerBox(size: SpacerSize.small),
+                              Divider(
+                                height: size.height * 0.018,
+                                color: Colors.transparent,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Feira',
+                                    style: TextStyle(
+                                        fontSize: size.height * 0.018,
+                                        color: kSecondaryColor,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                  DropDownFeira(controller),
+                                ],
+                              ),
+                              Divider(
+                                height: size.height * 0.018,
+                                color: Colors.transparent,
+                              ),
                               SizedBox(
                                 width: size.width,
                                 child: Row(
@@ -158,8 +179,10 @@ class _AddStoreScreenState extends State<AddStoreScreen> {
                                         ],
                                       ),
                                     ),
-                                    const VerticalSpacerBox(
-                                        size: SpacerSize.small),
+                                    Divider(
+                                      height: size.height * 0.018,
+                                      color: Colors.transparent,
+                                    ),
                                     IntrinsicWidth(
                                       child: Column(
                                         crossAxisAlignment:
@@ -303,7 +326,10 @@ class _AddStoreScreenState extends State<AddStoreScreen> {
                                   ],
                                 ),
                               ),
-                              const VerticalSpacerBox(size: SpacerSize.small),
+                              Divider(
+                                height: size.height * 0.018,
+                                color: Colors.transparent,
+                              ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -344,7 +370,10 @@ class _AddStoreScreenState extends State<AddStoreScreen> {
                                   )
                                 ],
                               ),
-                              const VerticalSpacerBox(size: SpacerSize.small),
+                              Divider(
+                                height: size.height * 0.018,
+                                color: Colors.transparent,
+                              ),
                               Text(
                                 'Realizará entregas?',
                                 style: TextStyle(

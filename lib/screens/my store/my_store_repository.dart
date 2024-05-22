@@ -5,6 +5,8 @@ import 'package:thunderapp/shared/constants/app_text_constants.dart';
 import 'package:thunderapp/shared/core/models/banca_model.dart';
 import 'package:thunderapp/shared/core/user_storage.dart';
 
+import '../../shared/core/models/feira_model.dart';
+
 class MyStoreRepository {
   List<String> checkItems = [];
   bool? entrega;
@@ -12,6 +14,46 @@ class MyStoreRepository {
   String formasPagamento = '';
   UserStorage userStorage = UserStorage();
   final Dio _dio = Dio();
+  List<FeiraModel> feiras = [];
+  FeiraModel feira = FeiraModel();
+
+  Future<List<FeiraModel>> getFeiras() async {
+    Dio dio = Dio();
+    UserStorage userStorage = UserStorage();
+
+    String? userToken = await userStorage.getUserToken();
+
+    var response =
+    await dio.get('$kBaseURL/feiras',
+        options: Options(
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Bearer $userToken"
+          },
+        ));
+
+    List<dynamic> responseData = response.data['feiras'];
+
+    for (int i = 0; i < responseData.length; i++) {
+      feira = FeiraModel(
+          id: responseData[i]["id"],
+          nome: responseData[i]["nome"],
+          descricao: responseData[i]["descricao"],
+          horariosFuncionamento: responseData[i]["horarios_funcionamento"],
+          bairroId: responseData[i]["bairro_id"],
+          associacaoId: responseData[i]["associacao_id"]);
+      feiras.add(feira);
+      print(feiras[i]);
+    }
+
+    if (response.statusCode == 200 ||
+        response.statusCode == 201) {
+      return feiras;
+    }
+    return [];
+  }
+
 
   //Função para editar a banca
   Future<bool> editarBanca(
@@ -19,6 +61,7 @@ class MyStoreRepository {
       String horarioAbertura,
       String horarioFechamento,
       String precoMin,
+      String feiraId,
       String? imgPath,
       List<bool> isSelected,
       String pix,
@@ -67,6 +110,9 @@ class MyStoreRepository {
           "preco_minimo": precoMin.isEmpty
               ? banca.getPrecoMin.toString()
               : preMinimo.toString(),
+          "feira_id": feiraId.isEmpty
+              ? banca.feiraId.toString()
+              : feiraId.toString(),
           "formas_pagamento": formasPagamento.toString(),
           "entrega": entrega.toString(),
           "pix": pix.isEmpty ? banca.getPix.toString() : pix.toString(),
@@ -85,6 +131,9 @@ class MyStoreRepository {
               : horarioFechamento.toString(),
           "preco_minimo":
               precoMin.isEmpty ? banca.getPrecoMin : preMinimo.toString(),
+          "feira_id": feiraId.isEmpty
+              ? banca.feiraId.toString()
+              : feiraId.toString(),
           "imagem": await MultipartFile.fromFile(
             imgPath.toString(),
             filename: imgPath?.split("\\").last,
@@ -105,6 +154,9 @@ class MyStoreRepository {
           "horario_fechamento": horarioFechamento.isEmpty
               ? banca.getHorarioFechamento.toString()
               : horarioFechamento.toString(),
+          "feira_id": feiraId.isEmpty
+              ? banca.feiraId.toString()
+              : feiraId.toString(),
           "formas_pagamento": formasPagamento.toString(),
           "entrega": entrega.toString(),
           "pix": pix.toString(),
@@ -125,6 +177,9 @@ class MyStoreRepository {
             imgPath.toString(),
             filename: imgPath?.split("\\").last,
           ),
+          "feira_id": feiraId.isEmpty
+              ? banca.feiraId.toString()
+              : feiraId.toString(),
           "formas pagamento": formasPagamento.toString(),
           "entrega": entrega.toString(),
           "pix": pix.toString(),
@@ -173,6 +228,7 @@ class MyStoreRepository {
       String horarioAbertura,
       String horarioFechamento,
       String precoMin,
+      String feiraId,
       String? imgPath,
       List<bool> isSelected,
       bool? entrega,
@@ -213,7 +269,7 @@ class MyStoreRepository {
           "entrega": entrega.toString(),
           "pix": pix.toString(),
           "agricultor_id": userId.toString(),
-          "feira_id": '1',
+          "feira_id": feiraId.toString(),
           "bairro entrega": '1=>3.50'
         });
         print(body.fields);
@@ -231,7 +287,7 @@ class MyStoreRepository {
           "entrega": entrega.toString(),
           "pix": pix.toString(),
           "agricultor_id": userId.toString(),
-          "feira_id": '1',
+          "feira_id": feiraId.toString(),
           "bairro entrega": '1=>3.50'
         });
         print(body.fields);
@@ -291,4 +347,7 @@ class MyStoreRepository {
         },
       );
     }*/
+
+
+
 }
