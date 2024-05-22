@@ -30,8 +30,8 @@ class SignInScreen extends StatelessWidget {
               child: Container(
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(colors: [
-                    Color(0xFFF87416),
-                    Color(0xFFFFB41D),
+                    Color(0xFF008000),
+                    Color(0xFF63A355),
                     //Colors.deepOrangeAccent,
                     //Colors.orangeAccent,
                   ]),
@@ -294,7 +294,7 @@ class SignInScreen extends StatelessWidget {
                                             color: Colors.transparent),
                                         Text(
                                           textAlign: TextAlign.center,
-                                          'VIDA AGROECOLÓGICA',
+                                          'ASSIM',
                                           style: TextStyle(
                                               fontWeight: FontWeight.w700,
                                               fontSize: size.height * 0.032,

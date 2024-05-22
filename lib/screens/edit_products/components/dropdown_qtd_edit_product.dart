@@ -66,7 +66,7 @@ class _DropDownQtdEditProductState
                       isExpanded: true,
                       icon: Icon(
                         Icons.keyboard_arrow_down,
-                        color: Colors.orange,
+                        color: kDetailColor,
                         size: size.width * 0.05,
                       ),
                       hint: Text(

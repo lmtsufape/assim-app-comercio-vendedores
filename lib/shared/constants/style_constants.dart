@@ -13,10 +13,11 @@ final kSecondaryFontFamily =
 final kDescriptionFontFamily =
     GoogleFonts.firaSans().fontFamily;
 //**LIGHT COLORS */
-const Color kPrimaryColor = Color(0xFFF5821F);
+const Color kPrimaryColor = Color(0xFF008000);
+
 const Color kBackgroundColor = Colors.white;
 const Color kSecondaryColor = Color(0xFF435969);
-const Color kDetailColor = Color(0xFFF5821F);
+const Color kDetailColor = Color(0xFF008000);
 const Color kOnBackgroundColor = Color(0xFF212931);
 const Color kTextColor = Colors.white;
 const Color kOnSurfaceColor = Colors.white;
